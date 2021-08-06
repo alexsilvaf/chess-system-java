@@ -7,9 +7,14 @@ public class Board {
 	private Piece[][] pieces;
 	
 	public Board(int rows, int columns) {
+<<<<<<< HEAD
 		if (rows < 1 || columns < 1) {
 			throw new BoardException("Error creating board: there must be at least 1 row and 1 column");
 		}
+=======
+		if (rows < 1 || columns < 1)
+			throw new BoardException("Error creating board: there must be at least 1 row and 1 column"); 
+>>>>>>> 681b9e044347cabe3dab08a7c508b4333b4890d3
 		this.rows = rows;
 		this.columns = columns;
 		pieces = new Piece[rows][columns];
@@ -22,25 +27,42 @@ public class Board {
 	public int getColumns() {
 		return columns;
 	}
+<<<<<<< HEAD
 	
 	public Piece piece(int row, int column) {
 		if (!positionExists(row, column)) {
 			throw new BoardException("Position not on the board");
 		}
+=======
+
+	public Piece piece(int row, int column) {
+		if (!positionExists(row, column))
+			throw new BoardException("Position not on the board");
+>>>>>>> 681b9e044347cabe3dab08a7c508b4333b4890d3
 		return pieces[row][column];
 	}
 	
 	public Piece piece(Position position) {
+<<<<<<< HEAD
 		if (!positionExists(position)) {
 			throw new BoardException("Position not on the board");
 		}
+=======
+		if (!positionExists(position))
+			throw new BoardException("Position not on the board");
+>>>>>>> 681b9e044347cabe3dab08a7c508b4333b4890d3
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
 	public void placePiece(Piece piece, Position position) {
+<<<<<<< HEAD
 		if (thereIsAPiece(position)) {
 			throw new BoardException("There is already a piece on position " + position);
 		}
+=======
+		if (thereIsAPiece(position))
+			throw new BoardException("There is already a piece on position " + position);
+>>>>>>> 681b9e044347cabe3dab08a7c508b4333b4890d3
 		pieces[position.getRow()][position.getColumn()] = piece;
 		piece.position = position;
 	}
@@ -54,9 +76,14 @@ public class Board {
 	}
 	
 	public boolean thereIsAPiece(Position position) {
+<<<<<<< HEAD
 		if (!positionExists(position)) {
 			throw new BoardException("Position not on the board");
 		}
+=======
+		if (!positionExists(position))
+			throw new BoardException("Position not on the board");
+>>>>>>> 681b9e044347cabe3dab08a7c508b4333b4890d3
 		return piece(position) != null;
 	}
 }
